@@ -456,6 +456,6 @@ function cerrarSesion() {
     const confirmar = confirm('¿Estás seguro que cerrar sesión?')
 
         if ( confirmar ) {
-            window.location.href = '../Interfaz de Inicio/index.html';
+            window.location.href = '../index.html';
         }
 }

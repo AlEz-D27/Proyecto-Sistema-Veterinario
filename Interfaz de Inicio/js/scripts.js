@@ -41,9 +41,19 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('#register-link').addEventListener('click', renderRegister);
 
         const rolSelect = document.getElementById('rol');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
         const registerLink = document.getElementById('register-link');
         
         rolSelect.addEventListener('change', function() {
+            if (rolSelect.value === 'admin') {
+                emailInput.value = 'admin@correo.com';
+                passwordInput.value = '123456';
+            } else {
+                emailInput.value = 'correo@correo.com';
+                passwordInput.value = '123456';
+            }
+
             if (rolSelect.value === 'propietario') {
                 registerLink.style.display = 'block';
             } else {
@@ -74,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('token', 'dummy-token');
             alert.innerHTML = `<div class="alert alert-success">Inicio de sesión exitoso</div>`;
             setTimeout(() => {
-                window.location.href = '../Interfaz del Administrador/index.html';
+                window.location.href = './Interfaz del Administrador/index.html';
             }, 1000);
             return;
         }
@@ -84,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('token', 'dummy-token');
             alert.innerHTML = `<div class="alert alert-success">Inicio de sesión exitoso</div>`;
             setTimeout(() => {
-                window.location.href = '../Interfaz del Veterinario/index.html';
+                window.location.href = './Interfaz del Veterinario/index.html';
             }, 1000);
             return;
         }
@@ -94,7 +104,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('token', 'dummy-token');
             alert.innerHTML = `<div class="alert alert-success">Inicio de sesión exitoso</div>`;
             setTimeout(() => {
-                window.location.href = '../Interfaz del Propietario/index.html';
+                window.location.href = './Interfaz del Propietario/index.html';
             }, 1000);
             return;
         }
