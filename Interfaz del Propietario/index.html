@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Propietario de Mascotas</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-container">
+            <h1 class="header-title">Panel de Propietario de Mascotas</h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><button class="enlace-nav" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="#" onclick="loadContent('seguimiento.html')">Seguimiento del Tratamiento</a>
+        <a href="#" onclick="loadContent('historial.html')">Historial de Tratamientos</a>
+        <a href="#" onclick="loadContent('pago.html')">Pago de Tratamientos</a>
+    </nav>
+    <div id="content">
+        <!-- El contenido se cargará aquí -->
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>

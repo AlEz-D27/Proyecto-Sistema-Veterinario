@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APV - Administrador de Pacientes de Veterinaria</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="header-title">Administrador de Pacientes de <span class="header-span">Veterinaria</span></h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><a class="enlace-nav" href="./index.html">Pacientes</a></li>
+                    <li><a class="enlace-nav" href="./perfil.html">Perfil</a></li>
+                    <li><button class="enlace-nav" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <h2 class="title">Editar Perfil</h2>
+
+        <p class="subtitle">Modifica tu <span>Información aquí</span></p>
+    
+        <div class="form-container-perfil">
+            <div class="form-wrapper">
+                <div id="alerta" class="alerta"></div>
+    
+                <form id="formulario-perfil">
+                    <div class="form-group-perfil">
+                        <label class="label" for="nombre">Nombre</label>
+                        <input type="text" id="nombre-perfil" class="input" name="nombre">
+                    </div>
+    
+                    <div class="form-group-perfil">
+                        <label class="label" for="web">Sitio Web</label>
+                        <input type="text" id="web-perfil" class="input" name="web">
+                    </div>
+    
+                    <div class="form-group-perfil">
+                        <label class="label" for="telefono">Teléfono</label>
+                        <input type="text" id="telefono-perfil" class="input" name="telefono">
+                    </div>
+    
+                    <div class="form-group-perfil">
+                        <label class="label" for="email">Email</label>
+                        <input type="text" id="email-perfil" class="input" name="email">
+                    </div>
+    
+                    <input type="submit" value="Guardar Cambios" class="submit-button">
+                </form>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>APV - Administrador de Pacientes de <span>Veterinaria</span></p>
+    </footer>
+
+    <script src="js/perfil.js"></script>
+</body>
+</html>

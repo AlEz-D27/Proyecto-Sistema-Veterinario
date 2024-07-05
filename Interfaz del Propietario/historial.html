@@ -1,0 +1,52 @@
+<div class="section">
+    <h2>Historial de Tratamientos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Tratamiento</th>
+                <th>Veterinario</th>
+                <th>Detalles</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>01/03/2024</td>
+                <td>Vacunación anual</td>
+                <td>Dr. Martinez</td>
+                <td><button class="button" onclick="openModal('detalle1')">Ver más detalles</button></td>
+            </tr>
+            <tr>
+                <td>15/05/2024</td>
+                <td>Desparasitación</td>
+                <td>Dr. Lopez</td>
+                <td><button class="button" onclick="openModal('detalle2')">Ver más detalles</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- Modal -->
+<div id="detalle1" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('detalle1')">&times;</span>
+        <h2>Detalles del Tratamiento</h2>
+        <p><strong>Fecha:</strong> 01/03/2024</p>
+        <p><strong>Tratamiento:</strong> Vacunación anual</p>
+        <p><strong>Veterinario:</strong> Emiliano Martinez</p>
+        <p><strong>Telefono del Veterinario:</strong> 0986224415</p>
+        <p><strong>Detalles:</strong> Vacuna contra rabia y parvovirus</p>
+    </div>
+</div>
+
+<div id="detalle2" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('detalle2')">&times;</span>
+        <h2>Detalles del Tratamiento</h2>
+        <p><strong>Fecha:</strong> 15/05/2024</p>
+        <p><strong>Tratamiento:</strong> Desparasitación</p>
+        <p><strong>Veterinario:</strong> Maximiliano Lopez</p>
+        <p><strong>Telefono del Veterinario:</strong> 0985189553</p>
+        <p><strong>Detalles:</strong> Tableta desparasitante oral</p>
+    </div>
+</div>

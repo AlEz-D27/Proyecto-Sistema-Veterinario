@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel de Administrador</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-container">
+            <h1 class="header-title">Panel de Administrador</h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><button class="enlace-nav" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <nav class="navbar">
+        <a href="#" onclick="showSection('manageUsers')">Gestionar Cuenta de Usuario</a>
+        <!-- <a href="#" onclick="showSection('assignRoles')">Asignar Roles o Usuarios</a> -->
+        <!-- <a href="#" onclick="showSection('configureSystem')">Configurar el Sistema</a> -->
+        <!-- <a href="#" onclick="showSection('managePermissions')">Gestionar Permisos de Acceso</a> -->
+        <a href="#" onclick="showSection('monitorAppointments')">Monitorear Citas y Tratamientos</a>
+        <a href="#" onclick="showSection('provideSupport')">Proveer Soporte Técnico</a>
+        <a href="#" onclick="showSection('manageInventory')">Gestionar Inventario</a>
+        <a href="#" onclick="showSection('superviseBilling')">Supervisar Facturación y Pagos</a>
+        <a href="#" onclick="showSection('auditFinancials')">Auditar Registros Financieros</a>
+    </nav>
+    <div id="content" class="content">
+        <!-- Sections will be loaded here -->
+    </div>
+
+    <!-- Modales -->
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('userModal')">&times;</span>
+            <h2>Gestionar Cuenta de Usuario</h2>
+            <form>
+                <div class="campo">
+                    <label for="username">Nombre de Usuario:</label>
+                    <input type="text" id="usernameInput" required>
+                </div>
+    
+                <div class="campo">
+                    <label for="username">Email:</label>
+                    <input type="email" id="emailInput" required>
+                </div>
+    
+                <div class="campo">
+                    <label for="rol">Rol:</label>
+                    <input type="text" id="rol" value="Veterinario" readonly>
+                </div>
+
+                <div class="campo">
+                    <label for="sucursal">Sucursal que pertenece:</label>
+                    <select name="sucursal" id="sucursal">
+                        <option value="Av. Venezuela">Av. Venezuela</option>
+                        <option value="Santisima Trinidad">Santisima Trinidad</option>
+                    </select>
+                </div>
+
+                <div class="modal-button">
+                    <button type="button" class="button" onclick="saveUser()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+<!-- 
+    <div id="roleModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('roleModal')">&times;</span>
+            <h2>Asignar Roles o Usuarios</h2>
+            <form>
+                <label for="usernameRoleModal">Nombre de Usuario:</label>
+                <input type="text" id="usernameRoleModal">
+                <label for="roleAssignModal">Rol:</label>
+                <input type="text" id="roleAssignModal">
+                <button type="button" class="button" onclick="saveRole()">Guardar</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="configureModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('configureModal')">&times;</span>
+            <h2>Configurar el Sistema</h2>
+            <form>
+                <label for="configSetting">Configuración:</label>
+                <input type="text" id="configSetting">
+                <button type="button" class="button" onclick="saveConfig()">Guardar</button>
+            </form>
+        </div>
+    </div> -->
+
+    <!-- <div id="permissionModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('permissionModal')">&times;</span>
+            <h2>Gestionar Permisos de Acceso</h2>
+            <form>
+                <div class="campo">
+                    <label for="username">Email del Usuario:</label>
+                    <input type="email" id="email" required>
+                </div>
+    
+                <div class="campo">
+                    <label for="role">Permisos:</label>
+                    <select id="role" required>
+                        <option value="Lectura">Lectura</option>
+                        <option value="Escritura">Escritura</option>
+                        <option value="Lectura, Escritura">Lectura, Escritura</option>
+                    </select>
+                </div>
+                <button type="button" class="button" onclick="savePermission()">Guardar</button>
+            </form>
+        </div>
+    </div> -->
+
+    <div id="supportModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('supportModal')">&times;</span>
+            <h2>Proveer Soporte Técnico</h2>
+            <form>
+                <div class="campo">
+                    <label for="username">Usuario:</label>
+                    <select name="username" id="username">
+                        <option value="Juan Pérez">Juan Pérez</option>
+                        <option value="Luis Díaz">Luis Díaz</option>
+                        <option value="Oscar Vargas">Oscar Vargas</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="username">Descripción:</label>
+                    <input type="text" id="descripción" required>
+                </div>
+    
+                <div class="modal-button">
+                    <button type="button" class="button" onclick="saveSupport()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="inventoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('inventoryModal')">&times;</span>
+            <h2>Gestionar Inventario</h2>
+            <form>
+                <div class="campo">
+                    <label for="productInventoryModal">Producto:</label>
+                    <input type="text" id="productoInput" required>
+                </div>
+
+                <div class="campo">
+                    <label for="quantityInventoryModal">Cantidad:</label>
+                    <input type="number" id="cantidadInput" required>
+                </div>
+
+                <div class="campo">
+                    <label for="priceInventoryModal">Precio:</label>
+                    <input type="number" id="priceInput" required>
+                </div>
+
+                <div class="modal-button">
+                    <button type="button" class="button" onclick="saveProduct()">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

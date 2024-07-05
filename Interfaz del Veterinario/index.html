@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador de Pacientes de Veterinaria</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <h1 class="header-title">Administrador de Pacientes de <span class="header-span">Veterinaria</span></h1>
+            <nav class="header-nav">
+                <ul>
+                    <li><a class="enlace-nav" href="./index.html">Pacientes</a></li>
+                    <li><a class="enlace-nav" href="./perfil.html">Perfil</a></li>
+                    <li><button class="enlace-nav" onclick="cerrarSesion()">Cerrar Sesión</button></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="administrar-pacientes" class="admin-container">
+            <div class="form-button">
+                <h2>Administrador de Pacientes</h2>
+                <p class="p-title">Añade tus Pacientes y <span>Adminístralos</span></p>
+                <div id="formulario-container" class="form-container">
+                    <div id="alerta" class="alerta"></div>
+
+                    <form id="formulario">
+                        <div class="form-group">
+                            <label for="nombre">Nombre Mascota</label>
+                            <input type="text" id="nombre" placeholder="Nombre de la Mascota">
+                        </div>
+                        <div class="form-group">
+                            <label for="propietario">Nombre Propietario</label>
+                            <select id="propietario">
+                                <option value="" disabled selected>Selecciona el Propietario</option>
+                                <option value="Juan Pérez" data-email="juan@correo.com">Juan Pérez</option>
+                                <option value="María Gómez" data-email="maria@correo.com">María Gómez</option>
+                                <option value="Carlos López" data-email="carlos@correo.com">Carlos López</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Propietario</label>
+                            <input type="email" id="email" placeholder="Email del Propietario" readonly>
+                        </div>
+                        <div class="form-group">
+                            <label for="fecha">Fecha de Alta</label>
+                            <input type="date" id="fecha">
+                        </div>
+                        <div class="form-group">
+                            <label for="sintomas">Síntomas de la Mascota</label>
+                            <textarea id="sintomas" placeholder="Describe los Síntomas"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="tratamiento">Tratamiento</label>
+                            <div class="tratamiento-container">
+                                <select id="tratamiento">
+                                    <option value="" disabled selected>Selecciona el Tratamiento</option>
+                                    <option value="Vacunación anual">Vacunación anual</option>
+                                    <option value="Desparasitación">Desparasitación</option>
+                                </select>
+                                <button type="button" id="btn-nuevo-tratamiento">+</button>
+                            </div>
+                        </div>
+                        <input type="submit" value="Agregar Paciente" class="submit-btn">
+                    </form>
+                </div>
+            </div>
+
+            <div class="listado">
+                <h2>Listado Pacientes</h2>
+                <p class="p-title">Administra tus <span>Pacientes y Citas</span></p>
+                <div class="list-container">
+                    <div id="listado-pacientes"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>APV - Administrador de Pacientes de <span>Veterinaria</span></p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal-nuevo-tratamiento" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Agregar Nuevo Tratamiento</h2>
+            <form id="form-nuevo-tratamiento">
+                <div class="form-group">
+                    <label for="nuevo-tratamiento">Nuevo Tratamiento</label>
+                    <input type="text" id="nuevo-tratamiento" placeholder="Nombre del Tratamiento">
+                </div>
+                <button type="submit" class="submit-btn">Agregar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal para informar estado de la cita -->
+    <div id="modal-informar-estado" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Informar Estado de la Cita</h2>
+            <form id="form-informar-estado">
+                <div class="form-group">
+                    <h2 class="h2-estado">Estado de la Cita</h2>
+                    <div class="radio-content">
+                        <input id="espera" type="radio" name="estado" value="En espera">
+                        <label class="label-radio" for="espera">En espera</label>
+                    </div>
+
+                    <div class="radio-content">
+                        <input id="proceso" type="radio" name="estado" value="En proceso">
+                        <label class="label-radio" for="proceso">En proceso</label>
+                    </div>
+
+                    <div class="radio-content">
+                        <input id="finalizado" type="radio" name="estado" value="Finalizado">
+                        <label class="label-radio" for="finalizado">Finalizado</label>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Guardar Estado</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+
+.header {
+    background-color: #3f51b5;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.header-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-size: 1.5rem /* 24px */;
+    line-height: 2rem /* 32px */;
+    --tw-text-opacity: 1;
+    color: rgb(199 210 254 / var(--tw-text-opacity)) /* #c7d2fe */;
+    padding-left: 8.5rem;
+    text-align: center;
+}
+
+.header-container {
+    /* display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px 0;
+    background-color: #4f46e5;
+    color: white; */
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+
+nav ul li a,
+nav ul li button {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem /* 16px */;
+    padding-right: 4.5rem /* 24px */;
+    margin-top: 0px;
+}
+
+.enlace-nav {
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) /* #ffffff */;
+    font-size: 0.875rem /* 14px */;
+    line-height: 1.25rem /* 20px */;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #3f51b5;
+}
+
+.navbar a {
+    color: white;
+    padding: 14px 20px;
+    text-decoration: none;
+    text-align: center;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+}
+
+.section {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    display: inline-block;
+    width: 80%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* .modal-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.modal-button button {
+    grid-column: 2 / 3;
+} */
+.modal-button {
+    display: flex;
+    justify-content: center;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+.edit-button {
+    background-color: #5d5af5;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.edit-button:hover {
+    background-color: #0007d3;
+}
+
+.delete-button {
+    background-color: #db3535;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.delete-button:hover {
+    background-color: #ff0000;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.formulario {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.campo {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.campo label {
+    flex-basis: 100px;
+}
+
+.tratamiento-proceso {
+    color: rgb(207, 207, 26);
+}
+
+.pendiente,
+.tratamiento-espera {
+    color: rgb(211, 0, 0);
+}
+
+.pagado,
+.tratamiento-finalizado {
+    color: rgb(6, 172, 6);
+}
+
+/* 
+Una forma de seleccionar los input's
+.campo input[type="text"],
+.campo input[type="tel"],
+.campo input[type="email"], 
+
+Una forma más corta, negando el tipo radio: */
+.campo input,
+.campo select {
+    flex: 1;
+    border: .10px solid #e1e1e1;
+    padding: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 20px;
+}
+
+.login-container label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+
